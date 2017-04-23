@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form id="chatform">
+	<div class="row current-chat-area">
+        <div class="col-md-12">
+              <ul class="media-list" id="chat">
+				{% for message in messages %}
+				<li class="media">
+                    <div class="media-body">
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object img-circle " src="https://app.teamsupport.com/dc/1078/UserAvatar/1839999/48/1470773165634">
+                            </a>
+                            <div class="media-body">
+                                {{ message.message }}
+                                <br>
+                               <small class="text-muted">{{ message.handle }} | {{ message.formatted_timestamp }}</small>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+				{% endfor %}
+            </ul>  
+        </div>
+    </div>
+    <div class="row current-chat-footer">
+    <div class="panel-footer">
+        <div class="input-group">
+            <input type="text" class="form-control" id="handle" placeholder="Name">
+          <input type="text" class="form-control" id="message" placeholder="Message">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit" id="go">Send</button>
+          </span>
+        </div>
+        </div>
+    </div>
+</form>
+	
+{% endblock content %}

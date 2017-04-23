@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load staticfiles %}
+	<title>Django Chat App</title>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = "text/css"/>
+	<link rel="stylesheet" href="{% static 'css/custom.css' %}" type = "text/css"/>
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="container-fluid">
+    <div class="row">
+		<!-- <div class="col-md-3">
+        	 <div class="row chats-row">
+                <div class="col-md-12">
+                    <a href="#" class="list-group-item open-request">
+                       <p>Name:  Matthew Townsen</p>
+                       <p>Email:  mtownsen@teamsupport.com</p>
+                       <p>Time:  2:47 PM</p>
+                       <p>Message:  It's all broken</p>
+                       <button class="btn btn-default">Accept</button>
+                    </a>
+                    <a href="#" class="list-group-item chat-request">Robert Johnson - Muroc Industries</a>
+        	    </div>
+                <div class="col-md-12">
+                    <a href="#" class="list-group-item">Travis Pitts - TeamSupport</a>
+                    <a href="#" class="list-group-item list-group-item-success">Heather Townsen - MyCCA</a>
+                    <a href="#" class="list-group-item active">Eric Harrington - TeamSupport</a>
+                </div>
+        	 </div>
+		</div> -->
+        <div class="col-md-9 current-chat">
+            <!-- <div class="row chat-toolbar-row">
+                <div class="col-sm-12">
+                    <div class="btn-group chat-toolbar" role="group" aria-label="...">
+                        <button id="chat-leave" class="btn btn-default ticket-option" type="button">
+                          <i class="glyphicon glyphicon-remove-sign"></i> Leave Chat
+                        </button>
+                        <button id="chat-invite" class="btn btn-default ticket-option" type="button">
+                          <i class="glyphicon glyphicon-plus"></i> Invite
+                        </button>
+                        <button id="chat-customer" class="btn btn-default ticket-option" type="button">
+                          <i class="glyphicon glyphicon-user"></i> Open Customer
+                        </button>
+                        <button id="chat-create-ticket" class="btn btn-default ticket-option" type="button">
+                          <i class="glyphicon glyphicon-pencil"></i> Create Ticket
+                        </button>
+                        <button id="chat-add-ticket" class="btn btn-default ticket-option" type="button">
+                          <i class="glyphicon glyphicon-plus"></i> Add to Ticket
+                        </button>
+                        <button id="chat-open-ticket" class="btn btn-default ticket-option" type="button">
+                          <i class="glyphicon glyphicon-open"></i> Open Ticket
+                        </button>
+                    </div>
+                </div>
+            </div> -->
+            {% block content %}{% endblock content %}
+		</div>
+	</div>
+</div>
+	
+
+	<!-- javascripts -->
+	<script type="text/javascript" src='{% static "js/jquery.js" %}'></script>
+	<script type="text/javascript" src='{% static "js/reconnecting-websocket.min.js" %}'></script>
+	<script type="text/javascript" src='{% static "js/chat.js" %}'></script>
+</body>
+</html>
